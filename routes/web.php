@@ -12,16 +12,23 @@
 */
 
 Route::get('/', function () {
-	$tasks = DB::table('tasks')->get();
+
+    return view('welcome');
+});
+
+Route::get('/tasks', function () {
+	//$tasks = DB::table('tasks')->get();
+	$tasks = App\Task::all();
 	//return $tasks; na ovaj nacin laravel casta json format
-    return view('index', compact("tasks"));
+    return view('tasks.index', compact("tasks"));
 });
 
 Route::get('/tasks/{id}', function ($id) {
 	
-	$task = DB::table('tasks')->find($id);
+	//$task = DB::table('tasks')->find($id);
+	$task = Task::find($id);
 	//dd($task);
-    return view('tasks.show', compact("tasks"));
+    return view('tasks.show', compact("task"));
 });
 
 Route::get('/about', function () {

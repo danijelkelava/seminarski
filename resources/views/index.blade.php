@@ -4,10 +4,6 @@
 	<title>My Blog</title>
 </head>
 <body>
-<ul>
-@foreach ($tasks as $task)
-<li>{{ $task->body }}</li>
-@endforeach
-</ul>
+<h1>My Blog</h1>
 </body>
 </html>
