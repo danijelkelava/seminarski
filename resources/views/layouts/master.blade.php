@@ -29,6 +29,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/unos">Unos filmova</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/zanr">Zanr</a>
+          </li>
         </ul>
       </div>
     </nav>

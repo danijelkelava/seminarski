@@ -15,6 +15,8 @@ Route::get('/', 'FilmsController@index');
 
 Route::get('/unos', 'FilmsController@unos');
 
+Route::get('/zanr', 'ZanrsController@zanr');
+
 /*Route::get('/tasks', function () {
 	//$tasks = DB::table('tasks')->get();
 	$tasks = Task::all();
