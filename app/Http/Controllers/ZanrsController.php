@@ -21,7 +21,10 @@ class ZanrsController extends Controller
     	/*$zanr = new Zanr;
     	$zanr->naziv = request('naziv');
     	$zanr->save();*/
-
+    	$this->validate(request(), [
+    		'naziv'=>'required|string|max:20'
+    	]);
+    	
     	Zanr::create([
     		'naziv'=>request('naziv')
     	]);
