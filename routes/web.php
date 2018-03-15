@@ -13,9 +13,7 @@
 
 Route::get('/', 'FilmsController@index');
 
-Route::get('/unos', function () {
-    return view('unos');
-});
+Route::get('/unos', 'FilmsController@unos');
 
 /*Route::get('/tasks', function () {
 	//$tasks = DB::table('tasks')->get();

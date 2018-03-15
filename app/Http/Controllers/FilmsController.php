@@ -10,4 +10,9 @@ class FilmsController extends Controller
     {
     	return view('index');
     }
+
+    public function unos()
+    {
+    	return view('unos');
+    }
 }
