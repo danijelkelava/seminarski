@@ -11,12 +11,11 @@
 |
 */
 
+Route::get('/', 'FilmsController@index');
 
-Route::get('/', 'PostController@index');
-
-Route::get('/tasks', 'TasksController@index');
-
-Route::get('/tasks/{task}', 'TasksController@show');
+Route::get('/unos', function () {
+    return view('unos');
+});
 
 /*Route::get('/tasks', function () {
 	//$tasks = DB::table('tasks')->get();
@@ -33,6 +32,4 @@ Route::get('/tasks/{task}', 'TasksController@show');
     return view('tasks.show', compact("task"));
 });*/
 
-Route::get('/about', function () {
-    return view('about');
-});
+
