@@ -15,11 +15,10 @@
 	  <div class="form-group">
 	    <label for="zanr">Zanr</label>
 	    <select id="exampleFormControlSelect1" class="form-control" id="zanr" name="id_zanr" aria-describedby="zanr">
-	      <option>1</option>
-	      <option>2</option>
-	      <option>3</option>
-	      <option>4</option>
-	      <option>5</option>
+	      <option>Izaberi zanr</option>
+	    @foreach($zanrs as $zanr)
+	      <option value="{{ $zanr->id }}">{{ $zanr->naziv }}</option>
+	    @endforeach
 	    </select>
 	  </div>
 	  <div class="form-group">
