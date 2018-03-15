@@ -15,6 +15,8 @@ Route::get('/', 'FilmsController@index');
 
 Route::get('/unos', 'FilmsController@unos');
 
+Route::post('/zanr', 'ZanrsController@store');
+
 Route::get('/zanr', 'ZanrsController@zanr');
 
 /*Route::get('/tasks', function () {

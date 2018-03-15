@@ -7,6 +7,7 @@
 @section('container')
 <div class="py-2">
 	<form method="POST" action="/zanr">
+		@csrf
 	  <div class="form-group">
 	    <label for="zanr">Naslov zanra</label>
 	    <input type="text" class="form-control" id="zanr" name="naziv" aria-describedby="zanr" placeholder="Unesi naslov zanra">
