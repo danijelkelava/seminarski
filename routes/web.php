@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/tasks', 'TasksController@index');
 
-Route::get('/tasks/{id}', 'TasksController@show');
+Route::get('/tasks/{task}', 'TasksController@show');
 
 /*Route::get('/tasks', function () {
 	//$tasks = DB::table('tasks')->get();
