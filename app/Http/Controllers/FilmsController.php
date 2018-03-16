@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Zanr;
 
@@ -15,7 +16,7 @@ class FilmsController extends Controller
 
     public function unos()
     {
-    	$zanrs = Zanr::all();
+    	$zanrs = DB::table('zanrs')->select('id', 'naziv')->get();
     	return view('unos', compact('zanrs'));
     }
 }

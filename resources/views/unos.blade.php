@@ -8,6 +8,7 @@
 <div class="py-4">
 	<h2>Forma za unos filmova</h2>
 	<form method="POST" action="/unos">
+		@csrf
 	  <div class="form-group">
 	    <label for="naslov">Naslov</label>
 	    <input type="text" class="form-control" id="naslov" name="naziv" aria-describedby="naslov" placeholder="Unesi naslov filma">
@@ -15,20 +16,21 @@
 	  <div class="form-group">
 	    <label for="zanr">Zanr</label>
 	    <select id="exampleFormControlSelect1" class="form-control" id="zanr" name="id_zanr" aria-describedby="zanr">
-	      <option>Izaberi zanr</option>
+	      <option value="" selected="selected">--</option>
+	    @if(count($zanrs))
 	    @foreach($zanrs as $zanr)
 	      <option value="{{ $zanr->id }}">{{ $zanr->naziv }}</option>
 	    @endforeach
+	    @endif
 	    </select>
 	  </div>
 	  <div class="form-group">
 	    <label for="godina">Godina</label>
 	    <select class="form-control" id="godina" name="godina" aria-describedby="godina">
-	      <option>1</option>
-	      <option>2</option>
-	      <option>3</option>
-	      <option>4</option>
-	      <option>5</option>
+	    <?php $current_year = (int) date('Y'); ?>
+	    @for ($i = 1900; $i <= $current_year; $i++)
+		<option value="{{ $i }}">{{ $i }}</option>
+		@endfor
 	    </select>
 	  </div>
 	  <div class="form-group">

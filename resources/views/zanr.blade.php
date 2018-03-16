@@ -5,7 +5,7 @@
 @section('heading', 'Zanrovi')
 
 @section('container')
-<div class="py-2">
+<div class="py-4">
 	@include('layouts.errors')
 	<form method="POST" action="/zanr">
 		@csrf
@@ -15,5 +15,13 @@
 	  </div>
 	  <button type="submit" class="btn btn-primary">Unesi zanr</button>
 	</form>	
+</div>
+<div class="py-4">
+	<h2>Lista zanrova</h2>
+	<ul class="list-group">
+		@foreach($zanrs as $zanr)
+		<li class="list-group-item">{{ $zanr->naziv }}</li>
+		@endforeach
+	</ul>
 </div>
 @endsection

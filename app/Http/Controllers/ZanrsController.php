@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Zanr;
 
@@ -9,7 +10,8 @@ class ZanrsController extends Controller
 {
     public function zanr()
     {
-    	return view('zanr');
+        $zanrs = DB::table('zanrs')->select('id', 'naziv')->get();
+    	return view('zanr', compact('zanrs'));
     }
 
     public function store()
