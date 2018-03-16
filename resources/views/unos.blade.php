@@ -7,16 +7,16 @@
 @section('container')
 <div class="py-4">
 	<h2>Forma za unos filmova</h2>
-	<form method="POST" action="/unos">
+	<form method="POST" action="/unos" enctype="multipart/form-data">
 		@csrf
 	  <div class="form-group">
 	    <label for="naslov">Naslov</label>
-	    <input type="text" class="form-control" id="naslov" name="naziv" aria-describedby="naslov" placeholder="Unesi naslov filma">
+	    <input type="text" class="form-control" id="naslov" name="naslov" aria-describedby="naslov" placeholder="Unesi naslov filma">
 	  </div>
 	  <div class="form-group">
 	    <label for="zanr">Zanr</label>
 	    <select id="exampleFormControlSelect1" class="form-control" id="zanr" name="id_zanr" aria-describedby="zanr">
-	      <option value="" selected="selected">--</option>
+	      <option value="" selected="selected" disabled>--</option>
 	    @if(count($zanrs))
 	    @foreach($zanrs as $zanr)
 	      <option value="{{ $zanr->id }}">{{ $zanr->naziv }}</option>
@@ -28,7 +28,7 @@
 	    <label for="godina">Godina</label>
 	    <select class="form-control" id="godina" name="godina" aria-describedby="godina">
 	    <?php $current_year = (int) date('Y'); ?>
-	    @for ($i = 1900; $i <= $current_year; $i++)
+	    @for ($i = $current_year; $i >= 1900; $i--)
 		<option value="{{ $i }}">{{ $i }}</option>
 		@endfor
 	    </select>
@@ -39,7 +39,7 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="slika">Slika</label>
-	    <input type="file" class="form-control" id="slika" name="slika" aria-describedby="slika" placeholder="Uploadaj sliku">
+	    <input type="text" class="form-control" id="slika" name="slika" aria-describedby="slika" placeholder="Uploadaj sliku">
 	  </div>
 	  <button type="submit" class="btn btn-primary" name="unesi">Unesi film</button>
 	</form>
@@ -58,24 +58,15 @@
 	    </tr>
 	  </thead>
 	  <tbody>
+	  	@foreach($films as $film)
 	    <tr>
-	      <th scope="row">1</th>
-	      <td>Mark</td>
-	      <td>Otto</td>
-	      <td>@mdo</td>
+	      <td>{{ $film->slika }}</td>
+	      <td>{{ $film->naslov }}</td>
+	      <td>{{ $film->godina }}</td>
+	      <td>{{ $film->trajanje }}&nbsp;min</td>
+	      <td><a type="button" class="btn btn-danger" href="">delete</a></td>
 	    </tr>
-	    <tr>
-	      <th scope="row">2</th>
-	      <td>Jacob</td>
-	      <td>Thornton</td>
-	      <td>@fat</td>
-	    </tr>
-	    <tr>
-	      <th scope="row">3</th>
-	      <td>Larry</td>
-	      <td>the Bird</td>
-	      <td>@twitter</td>
-	    </tr>
+	    @endforeach
 	  </tbody>
 	</table>
 </div>

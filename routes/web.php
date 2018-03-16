@@ -15,9 +15,11 @@ Route::get('/', 'FilmsController@index');
 
 Route::get('/unos', 'FilmsController@unos');
 
-Route::post('/zanr', 'ZanrsController@store');
+Route::post('/unos', 'FilmsController@store');
 
 Route::get('/zanr', 'ZanrsController@zanr');
+
+Route::post('/zanr', 'ZanrsController@store');
 
 /*Route::get('/tasks', function () {
 	//$tasks = DB::table('tasks')->get();

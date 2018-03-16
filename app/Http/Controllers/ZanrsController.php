@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 use App\Zanr;
 
@@ -10,7 +10,7 @@ class ZanrsController extends Controller
 {
     public function zanr()
     {
-        $zanrs = DB::table('zanrs')->select('id', 'naziv')->get();
+        $zanrs = Zanr::latest()->get();//oldest
     	return view('zanr', compact('zanrs'));
     }
 
@@ -24,7 +24,7 @@ class ZanrsController extends Controller
     	$zanr->naziv = request('naziv');
     	$zanr->save();*/
     	$this->validate(request(), [
-    		'naziv'=>'required|string|max:20'
+    		'naziv'=>'required|string|unique:zanrs|max:20'
     	]);
     	
     	Zanr::create([

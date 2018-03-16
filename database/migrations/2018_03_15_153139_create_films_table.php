@@ -17,9 +17,9 @@ class CreateFilmsTable extends Migration
             $table->increments('id');
             $table->string('naslov');
             $table->integer('id_zanr');
-            $table->dateTime('godina');
+            $table->char('godina', 4);
             $table->integer('trajanje');
-            $table->binary('slika');
+            $table->string('slika');
             $table->timestamps();
         });
     }
