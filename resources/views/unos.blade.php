@@ -7,6 +7,7 @@
 @section('container')
 <div class="py-4">
 	<h2>Forma za unos filmova</h2>
+	@include('layouts.errors')
 	<form method="POST" action="/unos" enctype="multipart/form-data">
 		@csrf
 	  <div class="form-group">
@@ -39,7 +40,7 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="slika">Slika</label>
-	    <input type="text" class="form-control" id="slika" name="slika" aria-describedby="slika" placeholder="Uploadaj sliku">
+	    <input type="file" class="form-control" id="slika" name="slika" aria-describedby="slika" placeholder="Uploadaj sliku">
 	  </div>
 	  <button type="submit" class="btn btn-primary" name="unesi">Unesi film</button>
 	</form>
@@ -60,7 +61,7 @@
 	  <tbody>
 	  	@foreach($films as $film)
 	    <tr>
-	      <td>{{ $film->slika }}</td>
+	      <td><img src="{{ asset($film->slika) }}"></td>
 	      <td>{{ $film->naslov }}</td>
 	      <td>{{ $film->godina }}</td>
 	      <td>{{ $film->trajanje }}&nbsp;min</td>
