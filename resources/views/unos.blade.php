@@ -61,7 +61,7 @@
 	  <tbody>
 	  	@foreach($films as $film)
 	    <tr>
-	      <td><img src="{{ asset($film->slika) }}"></td>
+	      <td><img src="{{ asset($film->slika) }}" style="width: 200px;"></td>
 	      <td>{{ $film->naslov }}</td>
 	      <td>{{ $film->godina }}</td>
 	      <td>{{ $film->trajanje }}&nbsp;min</td>

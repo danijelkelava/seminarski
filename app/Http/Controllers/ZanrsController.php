@@ -12,11 +12,11 @@ class ZanrsController extends Controller
     {
 
         $zanrs = Zanr::latest()->get();//oldest
-        
+
     	return view('zanr', compact('zanrs'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
     	//dd(request()->all());
     	//dd(request('naziv'));
@@ -25,7 +25,7 @@ class ZanrsController extends Controller
     	/*$zanr = new Zanr;
     	$zanr->naziv = request('naziv');
     	$zanr->save();*/
-    	$this->validate(request(), [
+    	$this->validate($request, [
     		'naziv'=>'required|string|unique:zanrs|max:20'
     	]);
     	
