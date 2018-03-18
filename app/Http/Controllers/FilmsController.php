@@ -26,6 +26,14 @@ class FilmsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'naslov'=>'required|string|unique:zanrs|max:20',
+            'id_zanr'=>'required|integer',
+            'godina'=>'required|numeric|size:4',
+            'trajanje'=>'required|integer',
+            'slika'=>'required|mimes:jpeg,png'
+
+        ]);
         
         if ($request->hasFile('slika')) {
 
