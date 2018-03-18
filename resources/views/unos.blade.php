@@ -61,11 +61,11 @@
 	  <tbody>
 	  	@foreach($films as $film)
 	    <tr>
-	      <td><img src="{{ asset($film->slika) }}" style="width: 200px;"></td>
-	      <td>{{ $film->naslov }}</td>
-	      <td>{{ $film->godina }}</td>
-	      <td>{{ $film->trajanje }}&nbsp;min</td>
-	      <td><a type="button" class="btn btn-danger" href="">delete</a></td>
+	      <td class="align-middle"><img src="{{ asset($film->slika) }}" style="width: 200px;"></td>
+	      <td class="align-middle">{{ $film->naslov }}</td>
+	      <td class="align-middle">{{ $film->godina }}</td>
+	      <td class="align-middle">{{ $film->trajanje }}&nbsp;min</td>
+	      <td class="align-middle"><a type="button" class="btn btn-danger" href="">delete</a></td>
 	    </tr>
 	    @endforeach
 	  </tbody>
