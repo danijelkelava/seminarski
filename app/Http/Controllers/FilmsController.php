@@ -50,4 +50,11 @@ class FilmsController extends Controller
         
         return redirect()->route('unos');
     }
+
+    public function destroy(Film $film)
+    {
+        $film->delete();
+
+        return redirect()->route('unos');
+    }
 }
