@@ -31,7 +31,9 @@ class FilmsController extends Controller
 
             $filename = $request->slika->getClientOriginalName();
             $request->slika->storeAs('public/uploads', $filename);
+
             $file_url = Storage::url('uploads/'.$filename);
+            
             if ($request->file('slika')->isValid()) {
                 $q = Film::create([
                     'naslov'=>request('naslov'),
