@@ -31,4 +31,21 @@ class StoreFilm extends FormRequest
             'slika'=>'required|mimes:jpeg,png'
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'naslov.required' => 'Naslov je obavezno polje',
+            'id_zanr.required'=>'Zanr je obavezno polje',
+            'godina.required'=>'Godina je obavezno polje',
+            'trajanje.required'=>'Trajanje je obavezno polje',
+            'slika.required'=>'Slika je obavezna'
+
+        ];
+    }
 }

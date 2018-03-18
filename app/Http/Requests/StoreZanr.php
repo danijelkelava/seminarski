@@ -24,7 +24,22 @@ class StoreZanr extends FormRequest
     public function rules()
     {
         return [
-            'naziv'=>'required|string|unique:zanrs|max:20'
+            'naziv'=>'required|string|alpha|unique:zanrs|max:20'
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'naziv.required' => 'Naziv je obavezno polje',
+            'naziv.unique' => 'Naziv vec postoji, unesite naziv zanra koji ne postoji u bazi podataka',
+            'naziv.max'=> 'Dozvoljeno je najvise 20 znakova',
+            'naziv.alpha'=>'Dotvoljena su samo slova'
         ];
     }
 }
