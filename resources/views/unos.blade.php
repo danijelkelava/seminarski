@@ -54,12 +54,13 @@
 	    <tr>
 	      <th scope="col">Slika</th>
 	      <th scope="col">Naslov filma</th>
-	      <th scope="col">Godina</th>
+	      <th scope="col">Godina snimanja</th>
 	      <th scope="col">Trajanje</th>
 	      <th scope="col"></th>
 	    </tr>
 	  </thead>
 	  <tbody>
+	  	@if(count($films))
 	  	@foreach($films as $film)
 	    <tr>
 	      <td class="align-middle"><img src="{{ asset($film->slika) }}" style="width: 200px;"></td>
@@ -68,13 +69,18 @@
 	      <td class="align-middle">{{ $film->trajanje }}&nbsp;min</td>
 	      <td class="align-middle">
 		      	<form method="post" action="/film/{{ $film->id }}">
-			      		@csrf
+			      	@csrf
 	                <input type="hidden" name="_method" value="DELETE" />
 					<button type="submit" class="btn btn-danger">delete</button>
 				</form>
 	      </td>
 	    </tr>
 	    @endforeach
+	    @else
+	    <tr>
+	    	<td><p>Nema filmova u bazi</p></td>
+	    </tr>	    
+	    @endif
 	  </tbody>
 	</table>
 </div>

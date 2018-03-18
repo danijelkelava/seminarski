@@ -53,8 +53,10 @@ class FilmsController extends Controller
 
     public function destroy(Film $film)
     {
+
         $film->delete();
 
         return redirect()->route('unos');
+        
     }
 }

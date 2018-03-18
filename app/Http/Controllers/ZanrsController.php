@@ -30,7 +30,7 @@ class ZanrsController extends Controller
 
     public function destroy(Zanr $zanr)
     {
-        //$zanr = Zanr::find($id);
+
         $zanr->delete();
 
         return redirect()->route('zanr');

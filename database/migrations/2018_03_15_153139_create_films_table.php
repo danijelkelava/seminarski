@@ -16,7 +16,7 @@ class CreateFilmsTable extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->increments('id');
             $table->string('naslov');
-            $table->integer('id_zanr');
+            $table->integer('id_zanr')->unsigned();
             $table->char('godina', 4);
             $table->integer('trajanje');
             $table->string('slika');

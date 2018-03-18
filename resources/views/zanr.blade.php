@@ -34,8 +34,8 @@
 
 		      	<form method="post" action="/zanr/{{ $zanr->id }}">
 		      		@csrf
-                <input type="hidden" name="_method" value="DELETE" />
-				<button type="submit" class="btn btn-danger">delete</button>
+	                <input type="hidden" name="_method" value="DELETE" />
+					<button type="submit" class="btn btn-danger">delete</button>
 				</form>
 
 		      </td>
