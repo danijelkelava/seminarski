@@ -6,13 +6,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreZanr;
 use App\Zanr;
+use App\Repositories\Zanrs;
 
 class ZanrsController extends Controller
 {
-    public function zanr()
+    public function zanr(Zanrs $zanrs)
     {
-
-        $zanrs = Zanr::latest()->get();//oldest
+        $zanrs = $zanrs->all();
+        //$zanrs = Zanr::latest()->get();//oldest
 
     	return view('zanr', compact('zanrs'));
     }
