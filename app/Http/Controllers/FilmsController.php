@@ -19,10 +19,10 @@ class FilmsController extends Controller
 
     public function unos(Films $films, Zanrs $zanrs)
     {
-
-    	$zanrs = $zanrs->all();
+        
         $films = $films->all();
-
+    	$zanrs = $zanrs->all();
+        
     	return view('unos', compact('zanrs', 'films'));
     }
 

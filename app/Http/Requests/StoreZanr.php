@@ -39,7 +39,7 @@ class StoreZanr extends FormRequest
             'naziv.required' => 'Naziv je obavezno polje',
             'naziv.unique' => 'Naziv vec postoji, unesite naziv zanra koji ne postoji u bazi podataka',
             'naziv.max'=> 'Dozvoljeno je najvise 20 znakova',
-            'naziv.alpha'=>'Dotvoljena su samo slova'
+            'naziv.alpha'=>'Dozvoljena su samo slova'
         ];
     }
 }
