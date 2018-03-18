@@ -41,10 +41,13 @@ class StoreFilm extends FormRequest
     {
         return [
             'naslov.required' => 'Naslov je obavezno polje',
+            'naslov.unique' => 'Naslov filma vec postoji, unesite naziv filma koji ne postoji u bazi podataka',
             'id_zanr.required'=>'Zanr je obavezno polje',
             'godina.required'=>'Godina je obavezno polje',
             'trajanje.required'=>'Trajanje je obavezno polje',
-            'slika.required'=>'Slika je obavezna'
+            'trajanje.integer'=>'Unos za trajanje mora biti broj',
+            'slika.required'=>'Slika je obavezna',
+            'slika.mimes'=>'Slika mora biti ispravan format'
 
         ];
     }
