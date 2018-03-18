@@ -17,7 +17,7 @@
 	  <div class="form-group">
 	    <label for="zanr">Zanr</label>
 	    <select id="exampleFormControlSelect1" class="form-control" id="zanr" name="id_zanr" aria-describedby="zanr">
-	      <option value="" selected="selected" disabled>--</option>
+	      <option value="" selected="selected" disabled>Odaberi zanr</option>
 	    @if(count($zanrs))
 	    @foreach($zanrs as $zanr)
 	      <option value="{{ $zanr->id }}">{{ $zanr->naziv }}</option>
@@ -28,7 +28,7 @@
 	  <div class="form-group">
 	    <label for="godina">Godina</label>
 	    <select class="form-control" id="godina" name="godina" aria-describedby="godina">
-	    <option value="" selected="selected" disabled>--</option>
+	    <option value="" selected="selected" disabled>Odaberi godinu</option>
 	    <?php $current_year = (int) date('Y'); ?>
 	    @for ($i = $current_year; $i >= 1900; $i--)
 		<option value="{{ $i }}">{{ $i }}</option>
