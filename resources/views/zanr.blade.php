@@ -14,7 +14,7 @@
 		    <label for="zanr">Naslov zanra</label>
 		    <input type="text" class="form-control" id="zanr" name="naziv" aria-describedby="zanr" placeholder="Unesi naslov zanra">
 		  </div>
-		  <button type="submit" class="btn btn-primary">Unesi zanr</button>
+		  <button type="submit" class="btn btn-dark">Unesi zanr</button>
 		</form>	
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-6 py-4 bg-info">

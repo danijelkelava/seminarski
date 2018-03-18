@@ -43,7 +43,7 @@
 	    <label for="slika">Slika</label>
 	    <input type="file" class="form-control" id="slika" name="slika" aria-describedby="slika" placeholder="Uploadaj sliku">
 	  </div>
-	  <button type="submit" class="btn btn-primary" name="unesi">Unesi film</button>
+	  <button type="submit" class="btn btn-dark" name="unesi">Unesi film</button>
 	</form>
 </div>
 <hr>

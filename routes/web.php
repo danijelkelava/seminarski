@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'FilmsController@index');
+Route::get('/filmovi', 'FilmsController@index');
 
 Route::get('/unos', 'FilmsController@unos');
 
