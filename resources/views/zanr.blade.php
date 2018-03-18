@@ -17,13 +17,24 @@
 		  <button type="submit" class="btn btn-primary">Unesi zanr</button>
 		</form>	
 	</div>
-	<div class="col-xs-12 col-sm-6 col-md-6 py-4">
+	<div class="col-xs-12 col-sm-6 col-md-6 py-4 bg-info">
 		<h2>Lista zanrova</h2>
-		<ul class="list-group">
-			@foreach($zanrs as $zanr)
-			<li class="list-group-item">{{ $zanr->naziv }}</li>
-			@endforeach
-		</ul>
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Naziv zanra</th>
+		      <th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	@foreach($zanrs as $zanr)
+		    <tr>
+		      <td class="align-middle">{{ $zanr->naziv }}</td>
+		      <td class="align-middle"><a type="button" class="btn btn-danger" href="">delete</a></td>
+		    </tr>
+		    @endforeach
+		  </tbody>
+		</table>
 	</div>
 </div>
 

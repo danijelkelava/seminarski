@@ -13,7 +13,6 @@ class ZanrsController extends Controller
     public function zanr(Zanrs $zanrs)
     {
         $zanrs = $zanrs->all();
-        //$zanrs = Zanr::latest()->get();//oldest
 
     	return view('zanr', compact('zanrs'));
     }

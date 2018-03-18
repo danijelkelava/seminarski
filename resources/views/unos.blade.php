@@ -47,7 +47,7 @@
 	</form>
 </div>
 <hr>
-<div class="py-4">
+<div class="py-4 bg-light">
 	<h2>Lista filmova</h2>
 	<table class="table">
 	  <thead>

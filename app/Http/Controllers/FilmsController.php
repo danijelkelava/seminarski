@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreFilm;
 use App\Film;
+use App\Repositories\Zanrs;
 
 class FilmsController extends Controller
 {
@@ -16,10 +16,10 @@ class FilmsController extends Controller
     	return view('index');
     }
 
-    public function unos()
+    public function unos(Zanrs $zanrs)
     {
 
-    	$zanrs = DB::table('zanrs')->select('id', 'naziv')->get();
+    	$zanrs = $zanrs->all();
         $films = Film::latest()->get();
 
     	return view('unos', compact('zanrs', 'films'));
