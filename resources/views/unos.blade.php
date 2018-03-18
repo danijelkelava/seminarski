@@ -26,7 +26,7 @@
 	    </select>
 	  </div>
 	  <div class="form-group">
-	    <label for="godina">Godina</label>
+	    <label for="godina">Godina snimanja</label>
 	    <select class="form-control" id="godina" name="godina" aria-describedby="godina">
 	    <option value="" selected="selected" disabled>Odaberi godinu</option>
 	    <?php $current_year = (int) date('Y'); ?>
