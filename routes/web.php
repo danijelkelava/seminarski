@@ -11,29 +11,17 @@
 |
 */
 
-Route::get('/filmovi', 'FilmsController@index');
+Route::get('/filmovi', 'FilmsController@index')->name('filmovi');
 
-Route::get('/unos', 'FilmsController@unos');
+Route::get('/unos', 'FilmsController@unos')->name('unos');
 
 Route::post('/unos', 'FilmsController@store');
 
-Route::get('/zanr', 'ZanrsController@zanr');
+Route::get('/zanr', 'ZanrsController@zanr')->name('zanr');
 
 Route::post('/zanr', 'ZanrsController@store');
 
-/*Route::get('/tasks', function () {
-	//$tasks = DB::table('tasks')->get();
-	$tasks = Task::all();
-	//return $tasks; na ovaj nacin laravel casta json format
-    return view('tasks.index', compact("tasks"));
-});*/
+Route::delete('/zanr/{zanr}', 'ZanrsController@destroy');
 
-/*Route::get('/tasks/{id}', function ($id) {
-	
-	//$task = DB::table('tasks')->find($id);
-	$task = Task::find($id);
-	//dd($task);
-    return view('tasks.show', compact("task"));
-});*/
 
 

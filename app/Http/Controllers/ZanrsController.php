@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Requests\StoreZanr;
 use App\Zanr;
 use App\Repositories\Zanrs;
@@ -24,6 +25,14 @@ class ZanrsController extends Controller
     		'naziv'=>request('naziv')
     	]);
 
-    	return redirect('/zanr');
+    	return redirect()->route('zanr');
+    }
+
+    public function destroy(Zanr $zanr)
+    {
+        //$zanr = Zanr::find($id);
+        $zanr->delete();
+
+        return redirect()->route('zanr');
     }
 }

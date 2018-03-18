@@ -30,7 +30,15 @@
 		  	@foreach($zanrs as $zanr)
 		    <tr>
 		      <td class="align-middle">{{ $zanr->naziv }}</td>
-		      <td class="align-middle"><a type="button" class="btn btn-danger" href="">delete</a></td>
+		      <td class="align-middle">
+
+		      	<form method="post" action="/zanr/{{ $zanr->id }}">
+		      		@csrf
+                <input type="hidden" name="_method" value="DELETE" />
+				<input type="submit" value="delete" />
+				</form>
+
+		      </td>
 		    </tr>
 		    @endforeach
 		  </tbody>

@@ -48,6 +48,6 @@ class FilmsController extends Controller
 
         }
         
-        return redirect('/unos');
+        return redirect()->route('unos');
     }
 }
