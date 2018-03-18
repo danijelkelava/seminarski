@@ -28,6 +28,7 @@
 	  <div class="form-group">
 	    <label for="godina">Godina</label>
 	    <select class="form-control" id="godina" name="godina" aria-describedby="godina">
+	    <option value="" selected="selected" disabled>--</option>
 	    <?php $current_year = (int) date('Y'); ?>
 	    @for ($i = $current_year; $i >= 1900; $i--)
 		<option value="{{ $i }}">{{ $i }}</option>

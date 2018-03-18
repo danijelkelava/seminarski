@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreFilm;
 use App\Film;
 
 class FilmsController extends Controller
@@ -24,16 +25,8 @@ class FilmsController extends Controller
     	return view('unos', compact('zanrs', 'films'));
     }
 
-    public function store(Request $request)
+    public function store(StoreFilm $request)
     {
-        $this->validate($request, [
-            'naslov'=>'required|string|unique:films|max:20',
-            'id_zanr'=>'required|integer',
-            'godina'=>'required|string|size:4',
-            'trajanje'=>'required|integer',
-            'slika'=>'required|mimes:jpeg,png'
-
-        ]);
 
         if ($request->hasFile('slika')) {
 
