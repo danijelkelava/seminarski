@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreFilm;
 use App\Film;
+use App\Repositories\Films;
 use App\Repositories\Zanrs;
 
 class FilmsController extends Controller
@@ -16,11 +17,11 @@ class FilmsController extends Controller
     	return view('index');
     }
 
-    public function unos(Zanrs $zanrs)
+    public function unos(Films $films, Zanrs $zanrs)
     {
 
     	$zanrs = $zanrs->all();
-        $films = Film::latest()->get();
+        $films = $films->all();
 
     	return view('unos', compact('zanrs', 'films'));
     }
