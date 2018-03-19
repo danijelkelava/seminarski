@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('page_title', 'Zanr')
+@section('page_title', 'Zanrovi')
 
 @section('heading', 'Zanrovi')
 

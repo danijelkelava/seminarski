@@ -15,7 +15,7 @@ class ZanrsController extends Controller
     {
         $zanrs = $zanrs->all();
 
-    	return view('zanr', compact('zanrs'));
+    	return view('zanrovi.index', compact('zanrs'));
     }
 
     public function store(StoreZanr $request)
@@ -25,7 +25,7 @@ class ZanrsController extends Controller
     		'naziv'=>request('naziv')
     	]);
 
-    	return redirect()->route('zanr');
+    	return redirect()->route('zanrovi');
     }
 
     public function destroy(Zanr $zanr)
@@ -33,6 +33,6 @@ class ZanrsController extends Controller
 
         $zanr->delete();
 
-        return redirect()->route('zanr');
+        return redirect()->route('zanrovi');
     }
 }

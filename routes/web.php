@@ -21,9 +21,9 @@ Route::post('/unos', 'FilmsController@store');
 
 Route::delete('/film/{film}', 'FilmsController@destroy')->name('film.destroy');
 
-Route::get('/zanr', 'ZanrsController@zanr')->name('zanr');
+Route::get('/zanrovi', 'ZanrsController@zanr')->name('zanrovi');
 
-Route::post('/zanr', 'ZanrsController@store');
+Route::post('/zanrovi', 'ZanrsController@store');
 
 Route::delete('/zanr/{zanr}', 'ZanrsController@destroy')->name('zanr.destroy');
 

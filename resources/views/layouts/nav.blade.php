@@ -10,10 +10,10 @@
         <a class="nav-link" href="/">Pocetna<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/unos">Unos filmova</a>
+        <a class="nav-link" href="/unos">Filmovi</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/zanr">Zanr</a>
+        <a class="nav-link" href="/zanrovi">Zanrovi</a>
       </li>
     </ul>
   </div>
