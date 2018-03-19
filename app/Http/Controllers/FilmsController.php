@@ -26,9 +26,10 @@ class FilmsController extends Controller
 
     }
 
-    public function showFilms()
+    public function showFilms($letter)
     {
-        
+        $films = Film::where('naslov','LIKE',"{$letter}%")->get();
+        dd($films);
     }
 
     public function unos(Films $films, Zanrs $zanrs)

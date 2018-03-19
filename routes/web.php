@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'FilmsController@index')->name('filmovi');
+Route::get('/', 'FilmsController@index')->name('filmski izbornik');
 
 Route::get('/filmovi/{letter}', 'FilmsController@showFilms')->name('filmovi');
 

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('page_title', 'Filmovi')
+@section('page_title', 'Filmski izbornik')
 
 @section('heading', 'Filmski izbornik')
 
