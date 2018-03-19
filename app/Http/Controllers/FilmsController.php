@@ -26,10 +26,15 @@ class FilmsController extends Controller
 
     }
 
-    public function showFilms($letter)
+    public function showFilms(Films $films, $letter)
     {
-        $films = Film::where('naslov','LIKE',"{$letter}%")->get();
-        dd($films);
+        $films = $films->getFilmsByLetter($letter);
+
+        /*foreach ($films as $film) {
+            dd($film->naslov, $film->slika);
+        }*/
+
+        return view('filmovi.index', compact('films'));
     }
 
     public function unos(Films $films, Zanrs $zanrs)

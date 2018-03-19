@@ -16,4 +16,8 @@ class Films
 		return Film::select('naslov')->orderBy('naslov', 'asc')->get();
 	}
 
+	public function getFilmsByLetter($letter)
+	{
+		return Film::where('naslov','LIKE',"{$letter}%")->get();
+	}
 }
