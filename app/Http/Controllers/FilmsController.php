@@ -19,7 +19,9 @@ class FilmsController extends Controller
         $collection = [];
 
         foreach ($films as $film) {
-            $collection[] = strtoupper($film->naslov[0]);
+            if (!in_array($film->naslov[0], $collection)) {
+                $collection[] = strtoupper($film->naslov[0]);
+            }            
         }
 
     	return view('index', compact('collection'));
@@ -28,13 +30,11 @@ class FilmsController extends Controller
 
     public function showFilms(Films $films, $letter)
     {
+
         $films = $films->getFilmsByLetter($letter);
 
-        /*foreach ($films as $film) {
-            dd($film->naslov, $film->slika);
-        }*/
-
         return view('filmovi.index', compact('films'));
+
     }
 
     public function unos(Films $films, Zanrs $zanrs)
