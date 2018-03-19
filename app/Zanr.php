@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Zanr extends Model
 {
-    protected $fillable = ['naziv'];//$guarded ako nesto ne zelimo
+	/**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'naziv'
+    ];//$guarded ako nesto ne zelimo
 }
