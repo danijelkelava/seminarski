@@ -10,4 +10,14 @@ class Films
 	{
 		return Film::latest()->get();
 	}
+
+	public function getFilmsNames()
+	{
+		return Film::select('naslov')->orderBy('naslov', 'asc')->get();
+	}
+
+	public function getFilmsByLetter()
+	{
+		return Film::select('naslov')->get();
+	}
 }

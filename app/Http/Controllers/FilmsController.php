@@ -11,10 +11,24 @@ use App\Repositories\Zanrs;
 
 class FilmsController extends Controller
 {
-    public function index()
+    public function index(Films $films)
     {
-    	
-    	return view('index');
+
+    	$films = $films->getFilmsNames();
+
+        $collection = [];
+
+        foreach ($films as $film) {
+            $collection[] = strtoupper($film->naslov[0]);
+        }
+
+    	return view('index', compact('collection'));
+
+    }
+
+    public function showFilms()
+    {
+        
     }
 
     public function unos(Films $films, Zanrs $zanrs)
