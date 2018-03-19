@@ -68,11 +68,11 @@
 	      <td class="align-middle">{{ $film->godina }}</td>
 	      <td class="align-middle">{{ $film->trajanje }}&nbsp;min</td>
 	      <td class="align-middle">
-		      	<form method="post" action="/film/{{ $film->id }}">
-			      	@csrf
-	                <input type="hidden" name="_method" value="DELETE" />
-					<button type="submit" class="btn btn-danger">delete</button>
-				</form>
+		    <form method="post" action="/film/{{ $film->id }}">
+			    @csrf
+	            <input type="hidden" name="_method" value="DELETE" />
+			    <button type="submit" class="btn btn-danger">delete</button>
+		    </form>
 	      </td>
 	    </tr>
 	    @endforeach

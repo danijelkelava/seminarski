@@ -31,13 +31,11 @@
 		    <tr>
 		      <td class="align-middle">{{ $zanr->naziv }}</td>
 		      <td class="align-middle">
-
 		      	<form method="post" action="/zanr/{{ $zanr->id }}">
 		      		@csrf
 	                <input type="hidden" name="_method" value="DELETE" />
 					<button type="submit" class="btn btn-danger">delete</button>
 				</form>
-
 		      </td>
 		    </tr>
 		    @endforeach
