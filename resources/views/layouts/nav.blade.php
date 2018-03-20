@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Izbornik<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ route('filmski izbornik') }}">Izbornik<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/unos">Filmovi</a>
+        <a class="nav-link" href="{{ route('unos') }}">Filmovi</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/zanrovi">Zanrovi</a>
+        <a class="nav-link" href="{{ route('zanrovi') }}">Zanrovi</a>
       </li>
     </ul>
   </div>
