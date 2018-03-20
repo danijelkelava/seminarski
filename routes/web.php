@@ -13,7 +13,7 @@
 
 Route::get('/', 'FilmsController@index')->name('filmski izbornik');
 
-Route::get('/filmovi/{letter}', 'FilmsController@showFilms')->name('filmovi');
+Route::get('/filmovi/{letter}', 'FilmsController@showFilms')->name('filmovi.showFilms');
 
 Route::get('/unos', 'FilmsController@unos')->name('unos');
 

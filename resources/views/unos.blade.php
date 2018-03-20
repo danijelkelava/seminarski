@@ -8,7 +8,7 @@
 <div class="py-4">
 	<h2>Forma za unos filmova</h2>
 	@include('layouts.errors')
-	<form method="POST" action="/unos" enctype="multipart/form-data">
+	<form method="POST" action="{{ route('unos') }}" enctype="multipart/form-data">
 		@csrf
 	  <div class="form-group">
 	    <label for="naslov">Naslov</label>
@@ -68,7 +68,7 @@
 	      <td class="align-middle">{{ $film->godina }}</td>
 	      <td class="align-middle">{{ $film->trajanje }}&nbsp;min</td>
 	      <td class="align-middle">
-		    <form method="post" action="/film/{{ $film->id }}">
+		    <form method="post" action="{{ route('film.destroy', ['film'=>$film->id]) }}">
 			    @csrf
 	            <input type="hidden" name="_method" value="DELETE" />
 			    <button type="submit" class="btn btn-danger">delete</button>

@@ -8,7 +8,7 @@
 <div>
 	<nav>
 		@foreach($collection as $letter)
-		<a class="btn btn-outline-primary" href="{{ route('filmovi', ['filmovi'=>$letter]) }}">{{ $letter }}</a>
+		<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$letter]) }}">{{ $letter }}</a>
 		@endforeach
 		<?php $letters = range('A', 'Z') ?>
 		<?php foreach($letters as $let) : ?>
