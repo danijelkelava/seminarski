@@ -25,7 +25,7 @@ class ZanrsController extends Controller
     		'naziv'=>request('naziv')
     	]);
 
-    	return redirect()->route('zanrovi');
+    	return redirect()->route('zanrovi')->with('success', 'Novi zanr uspjesno dodan');
     }
 
     public function destroy(Zanr $zanr)

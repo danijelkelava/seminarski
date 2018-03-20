@@ -8,6 +8,7 @@
 <div class="py-4">
 	<h2>Forma za unos filmova</h2>
 	@include('layouts.errors')
+	@include('layouts.success')
 	<form method="POST" action="{{ route('unos') }}" enctype="multipart/form-data">
 		@csrf
 	  <div class="form-group">

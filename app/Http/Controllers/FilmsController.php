@@ -14,11 +14,11 @@ class FilmsController extends Controller
     public function index(Films $films)
     {
 
-    	$collection = $films->getFilmsNamesFirstLetter();
+    	$first_letters = $films->getFilmsNamesFirstLetter();
 
         $alpha_characters = range('A', 'Z');
 
-    	return view('index', compact('collection', 'alpha_characters'));
+    	return view('index', compact('first_letters', 'alpha_characters'));
 
     }
 
@@ -63,7 +63,7 @@ class FilmsController extends Controller
 
         }
         
-        return redirect()->route('unos');
+        return redirect()->route('unos')->with('success', 'Film uspjesno unesen');
     }
 
     public function destroy(Film $film)

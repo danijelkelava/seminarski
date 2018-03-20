@@ -9,7 +9,7 @@
 	<nav>
 		<div>
 			<p>Izbornik - prvi nacin</p>
-			@foreach($collection as $letter)
+			@foreach($first_letters as $letter)
 			<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$letter]) }}">{{ $letter }}</a>
 			@endforeach	
 		</div>
