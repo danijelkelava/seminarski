@@ -72,7 +72,7 @@ class FilmsController extends Controller
         Storage::disk('public')->delete($film->slika);
         $film->delete();
         
-        return redirect()->route('unos');
+        return redirect()->route('unos')->with('success', 'Film je izbrisan');
         
     }
 }

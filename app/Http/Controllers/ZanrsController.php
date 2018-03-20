@@ -33,6 +33,6 @@ class ZanrsController extends Controller
 
         $zanr->delete();
 
-        return redirect()->route('zanrovi');
+        return redirect()->route('zanrovi')->with('success', 'Zanr je obrisan');
     }
 }
