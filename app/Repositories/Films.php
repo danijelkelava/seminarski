@@ -11,9 +11,19 @@ class Films
 		return Film::latest()->get();
 	}
 
-	public function getFilmsNames()
+	public function getFilmsNamesFirstLetter()
 	{
-		return Film::select('naslov')->orderBy('naslov', 'asc')->get();
+		$films = Film::select('naslov')->orderBy('naslov', 'asc')->get();
+
+		$collection = [];
+
+        foreach ($films as $film) {
+            if (!in_array($film->naslov[0], $collection)) {
+                $collection[] = strtoupper($film->naslov[0]);
+            }            
+        }
+
+        return $collection;
 	}
 
 	public function getFilmsByLetter($letter)

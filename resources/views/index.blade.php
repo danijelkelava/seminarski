@@ -7,13 +7,19 @@
 @section('container')
 <div>
 	<nav>
-		@foreach($collection as $letter)
-		<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$letter]) }}">{{ $letter }}</a>
-		@endforeach
-		<?php $letters = range('A', 'Z') ?>
-		<?php foreach($letters as $let) : ?>
-			<a class="btn btn-outline-primary" href="/filmovi/<?php echo $let; ?>" ><?php echo $let; ?></a>
-		<?php endforeach; ?>
+		<div>
+			<p>Izbornik - prvi nacin</p>
+			@foreach($collection as $letter)
+			<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$letter]) }}">{{ $letter }}</a>
+			@endforeach	
+		</div>
+		<div>
+			<p>Izbornik - drugi nacin</p>
+			@foreach($alpha_characters as $character)
+			<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$character]) }}">{{ $character }}</a>
+			@endforeach
+		</div>
+		
 	</nav>
 </div>
 @endsection

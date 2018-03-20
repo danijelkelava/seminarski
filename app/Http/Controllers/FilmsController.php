@@ -14,17 +14,11 @@ class FilmsController extends Controller
     public function index(Films $films)
     {
 
-    	$films = $films->getFilmsNames();
+    	$collection = $films->getFilmsNamesFirstLetter();
 
-        $collection = [];
+        $alpha_characters = range('A', 'Z');
 
-        foreach ($films as $film) {
-            if (!in_array($film->naslov[0], $collection)) {
-                $collection[] = strtoupper($film->naslov[0]);
-            }            
-        }
-
-    	return view('index', compact('collection'));
+    	return view('index', compact('collection', 'alpha_characters'));
 
     }
 
