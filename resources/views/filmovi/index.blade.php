@@ -7,32 +7,19 @@
 @section('container')
 <div class="py-4 bg-light">
 	<h2>Lista filmova</h2>
-	<table class="table">
-	  <thead>
-	    <tr>
-	      <th scope="col">Slika</th>
-	      <th scope="col">Naslov filma</th>
-	      <th scope="col">Godina snimanja</th>
-	      <th scope="col">Trajanje</th>
-	      <th scope="col"></th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	  	@if(count($films))
-	  	@foreach($films as $film)
-	    <tr>
-	      <td class="align-middle"><img src="{{ asset('storage/'.$film->slika) }}" style="width: 200px;"></td>
-	      <td class="align-middle">{{ $film->naslov }}</td>
-	      <td class="align-middle">{{ $film->godina }}</td>
-	      <td class="align-middle">{{ $film->trajanje }}&nbsp;min</td>
-	    </tr>
-	    @endforeach
-	    @else
-	    <tr>
-	    	<td><p>Nema filmova u bazi</p></td>
-	    </tr>	    
-	    @endif
-	  </tbody>
-	</table>
+	@if(count($films))
+	@foreach($films as $film)
+	<div class="card" style="width: 18rem;">
+	  <img class="card-img-top" src="{{ asset('storage/'.$film->slika) }}" alt="Card image cap">
+	  <div class="card-body">
+	    <h5 class="card-title">{{ $film->naslov }}&nbsp;({{ $film->godina }})</h5>
+	    <p class="card-text">Trajanje:&nbsp;{{ $film->trajanje }}&nbsp;min</p>
+	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	  </div>
+	</div>
+	@endforeach
+	@else
+	<p>Nema filmova u bazi</p>	    
+	@endif
 </div>
 @endsection
