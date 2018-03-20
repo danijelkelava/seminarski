@@ -55,8 +55,8 @@ class FilmsController extends Controller
 
             $request->slika->storeAs('public/images', $filename);
 
-            $file_url = Storage::url('images/'.$filename);
-            
+            //$file_url = Storage::url('images/'.$filename);
+            $file_url = 'images/'.$filename;
             if ($request->file('slika')->isValid()) {
                 $q = Film::create([
                     'naslov'=>request('naslov'),
@@ -74,9 +74,8 @@ class FilmsController extends Controller
 
     public function destroy(Film $film)
     {
-        //dd($film->slika);
-        //Storage::delete('images/logo.png');
-        Storage::disk('public')->delete('/images/logo_2.png');
+
+        Storage::disk('public')->delete($film->slika);
         $film->delete();
         
         return redirect()->route('unos');
