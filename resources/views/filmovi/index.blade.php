@@ -5,7 +5,7 @@
 @section('heading', 'Filmovi')
 
 @section('container')
-<div class="py-4 bg-light">
+<div class="py-4">
 	<h2>Lista filmova</h2>
 	@if(count($films))
 	@foreach($films as $film)
