@@ -9,7 +9,7 @@
 	<nav>
 		<div>
 			@if(count($first_letters)>0)
-			<p>Filmovi iz baze podataka po pocetnom slovu</p>
+			<p>Izbor filmova iz baze podataka po pocetnom slovu</p>
 			@foreach($first_letters as $letter)
 			<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$letter]) }}">{{ $letter }}</a>
 			@endforeach
