@@ -16,9 +16,7 @@ class FilmsController extends Controller
 
     	$first_letters = $films->getFilmsNamesFirstLetter();
 
-        $alpha_characters = range('A', 'Z');
-
-    	return view('index', compact('first_letters', 'alpha_characters'));
+    	return view('index', compact('first_letters'));
 
     }
 

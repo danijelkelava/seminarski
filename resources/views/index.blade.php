@@ -8,18 +8,16 @@
 <div>
 	<nav>
 		<div>
-			<p>Izbornik - prvi nacin</p>
+			<p>Izbornik</p>
+			@if(count($first_letters)>0)
+			<p>Filmovi po pocetnim imenima</p>
 			@foreach($first_letters as $letter)
 			<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$letter]) }}">{{ $letter }}</a>
-			@endforeach	
-		</div>
-		<div>
-			<p>Izbornik - drugi nacin</p>
-			@foreach($alpha_characters as $character)
-			<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$character]) }}">{{ $character }}</a>
 			@endforeach
+			@else
+			<p>Nema filmova u bazi podataka</p>
+			@endif
 		</div>
-		
 	</nav>
 </div>
 @endsection
