@@ -19,6 +19,7 @@
 		</form>	
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-6 py-4 bg-info">
+		@if(count($zanrs)>0)
 		<h2>Lista zanrova</h2>
 		<table class="table">
 		  <thead>
@@ -42,6 +43,9 @@
 		    @endforeach
 		  </tbody>
 		</table>
+		@else
+		<p><i>Jos nije unesen nijedan zanr. Ako zelite unositi filmove u bazu podataka, najprije morate unijeti zanrove.</i></p>
+		@endif
 	</div>
 </div>
 

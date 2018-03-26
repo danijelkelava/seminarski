@@ -19,7 +19,7 @@
 	    <label for="zanr">Zanr</label>
 	    <select id="exampleFormControlSelect1" class="form-control" id="zanr" name="id_zanr" aria-describedby="zanr">
 	      <option value="" selected="selected" disabled>Odaberi zanr</option>
-	    @if(count($zanrs))
+	    @if(count($zanrs)>0)
 	    @foreach($zanrs as $zanr)
 	      <option value="{{ $zanr->id }}">{{ $zanr->naziv }}</option>
 	    @endforeach
@@ -49,6 +49,7 @@
 </div>
 <hr>
 <div class="py-4 bg-light">
+	@if(count($films)>0)
 	<h2>Lista filmova</h2>
 	<table class="table">
 	  <thead>
@@ -61,7 +62,7 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	@if(count($films))
+	  	
 	  	@foreach($films as $film)
 	    <tr>
 	      <td class="align-middle"><img src="{{ asset($film->slika) }}" style="width: 200px;"></td>
@@ -77,12 +78,10 @@
 	      </td>
 	    </tr>
 	    @endforeach
-	    @else
-	    <tr>
-	    	<td><p>Nema filmova u bazi</p></td>
-	    </tr>	    
+	   </tbody>
+	</table>	    
+	    @else	  
+	    <p><i>Nema filmova u bazi podataka</i></p></td>	    	    
 	    @endif
-	  </tbody>
-	</table>
 </div>
 @endsection
