@@ -64,7 +64,7 @@
 	  	@if(count($films))
 	  	@foreach($films as $film)
 	    <tr>
-	      <td class="align-middle"><img src="{{ asset('storage/'.$film->slika) }}" style="width: 200px;"></td>
+	      <td class="align-middle"><img src="{{ asset($film->slika) }}" style="width: 200px;"></td>
 	      <td class="align-middle">{{ $film->naslov }}</td>
 	      <td class="align-middle">{{ $film->godina }}</td>
 	      <td class="align-middle">{{ $film->trajanje }}&nbsp;min</td>

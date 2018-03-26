@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreFilm;
 use App\Film;
 use App\Repositories\Films;
 use App\Repositories\Zanrs;
+use Illuminate\Support\Facades\Input;
 
 class FilmsController extends Controller
 {
@@ -41,15 +42,15 @@ class FilmsController extends Controller
     public function store(StoreFilm $request)
     {
 
-        if ($request->hasFile('slika')) {
+        if (Input::hasFile('slika')) {
 
             $filename = $request->slika->getClientOriginalName();
 
-            $request->slika->storeAs('public/images', $filename);
+            $request->slika->move(public_path('images'), $filename);
 
-            //$file_url = Storage::url('images/'.$filename);
             $file_url = 'images/'.$filename;
-            if ($request->file('slika')->isValid()) {
+
+            if (file_exists(public_path('images' . DIRECTORY_SEPARATOR . $filename))) {
                 $q = Film::create([
                     'naslov'=>request('naslov'),
                     'id_zanr'=>request('id_zanr'),
@@ -67,7 +68,7 @@ class FilmsController extends Controller
     public function destroy(Film $film)
     {
 
-        Storage::disk('public')->delete($film->slika);
+        File::delete($film->slika);
         $film->delete();
         
         return redirect()->route('unos')->with('success', 'Film je izbrisan');
