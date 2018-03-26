@@ -10,7 +10,7 @@
 		<div>
 			<p>Izbornik</p>
 			@if(count($first_letters)>0)
-			<p>Filmovi po pocetnim imenima</p>
+			<p>Filmovi iz baze podataka po pocetnom slovu</p>
 			@foreach($first_letters as $letter)
 			<a class="btn btn-outline-primary" href="{{ route('filmovi.showFilms', ['filmovi'=>$letter]) }}">{{ $letter }}</a>
 			@endforeach
