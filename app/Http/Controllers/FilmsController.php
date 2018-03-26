@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Input;
 
 class FilmsController extends Controller
 {
+
     public function index(Films $films)
     {
 
@@ -20,6 +21,7 @@ class FilmsController extends Controller
     	return view('index', compact('first_letters'));
 
     }
+
 
     public function showFilms(Films $films, $letter)
     {
@@ -30,6 +32,7 @@ class FilmsController extends Controller
 
     }
 
+
     public function unos(Films $films, Zanrs $zanrs)
     {
         
@@ -38,6 +41,7 @@ class FilmsController extends Controller
         
     	return view('unos', compact('zanrs', 'films'));
     }
+
 
     public function store(StoreFilm $request)
     {
@@ -67,13 +71,14 @@ class FilmsController extends Controller
         }catch(\Illuminate\Database\QueryException $e){
 
             dd($e);
-            
+
         }
 
         
         
         return redirect()->route('unos')->with('success', 'Film uspjesno unesen');
     }
+    
 
     public function destroy(Film $film)
     {

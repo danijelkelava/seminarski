@@ -11,12 +11,14 @@ use App\Repositories\Zanrs;
 
 class ZanrsController extends Controller
 {
+
     public function zanr(Zanrs $zanrs)
     {
         $zanrs = $zanrs->all();
 
     	return view('zanrovi.index', compact('zanrs'));
     }
+
 
     public function store(StoreZanr $request)
     {
@@ -35,6 +37,7 @@ class ZanrsController extends Controller
 
     	return redirect()->route('zanrovi')->with('success', 'Novi zanr uspjesno dodan');
     }
+    
 
     public function destroy(Zanr $zanr)
     {
