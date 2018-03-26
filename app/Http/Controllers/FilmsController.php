@@ -47,20 +47,30 @@ class FilmsController extends Controller
             $filename = $request->slika->getClientOriginalName();
 
             $request->slika->move(public_path('images'), $filename);
-
-            $file_url = 'images/'.$filename;
-
+            
             if (file_exists(public_path('images' . DIRECTORY_SEPARATOR . $filename))) {
-                $q = Film::create([
-                    'naslov'=>request('naslov'),
-                    'id_zanr'=>request('id_zanr'),
-                    'godina'=>request('godina'),
-                    'trajanje'=>request('trajanje'),
-                    'slika'=> (string) $file_url
-                ]);
+               $file_url = 'images/'.$filename;
             }
 
         }
+
+        try{
+
+            Film::create([
+                'naslov'=>request('naslov'),
+                'id_zanr'=>request('id_zanr'),
+                'godina'=>request('godina'),
+                'trajanje'=>request('trajanje'),
+                'slika'=> (string) $file_url
+            ]);
+
+        }catch(\Illuminate\Database\QueryException $e){
+
+            dd($e);
+            
+        }
+
+        
         
         return redirect()->route('unos')->with('success', 'Film uspjesno unesen');
     }

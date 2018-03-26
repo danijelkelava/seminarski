@@ -20,10 +20,18 @@ class ZanrsController extends Controller
 
     public function store(StoreZanr $request)
     {
+    	try{
+
+            Zanr::create([
+                'naziv'=>request('naziv')
+            ]);
+
+        }catch(\Illuminate\Database\QueryException $e){
+
+            dd($e);
+            
+        }
     	
-    	Zanr::create([
-    		'naziv'=>request('naziv')
-    	]);
 
     	return redirect()->route('zanrovi')->with('success', 'Novi zanr uspjesno dodan');
     }
