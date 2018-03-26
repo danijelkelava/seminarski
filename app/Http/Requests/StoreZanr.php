@@ -24,7 +24,7 @@ class StoreZanr extends FormRequest
     public function rules()
     {
         return [
-            'naziv'=>'required|string|alpha|unique:zanrs|max:20'
+            'naziv'=>'required|string|alpha|unique:zanrs|min:2|max:20'
         ];
     }
 
@@ -39,7 +39,8 @@ class StoreZanr extends FormRequest
             'naziv.required' => 'Naziv je obavezno polje',
             'naziv.unique' => 'Naziv vec postoji, unesite naziv zanra koji ne postoji u bazi podataka',
             'naziv.max'=> 'Dozvoljeno je najvise 20 znakova',
-            'naziv.alpha'=>'Dozvoljena su samo slova'
+            'naziv.alpha'=>'Dozvoljena su samo slova',
+            'naziv.min'=>'Dozvoljeno je najmanje dva znaka'
         ];
     }
 }
