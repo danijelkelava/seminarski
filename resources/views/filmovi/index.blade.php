@@ -10,11 +10,11 @@
 	<div class="row">
 	@if(count($films))
 	@foreach($films as $film)
-	<div class="card col-xs-4 my-4" style="height: 18rem;">
+	<div class="card my-2 mx-2" style="width: 10rem;">
 	  <img class="card-img-top" src="{{ asset($film->slika) }}" alt="Card image cap">
 	  <div class="card-body">
-	    <h5 class="card-title">{{ $film->naslov }}&nbsp;({{ $film->godina }})</h5>
-	    <p class="card-text">Trajanje:&nbsp;{{ $film->trajanje }}&nbsp;min</p>
+	    <h5 class="card-title">{{ $film->naslov }}({{ $film->godina }})</h5>
+	    <p class="card-text">Trajanje:&nbsp;{{ $film->trajanje }} min</p>
 	  </div>
 	</div>
 	@endforeach
